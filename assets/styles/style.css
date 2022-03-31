@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&family=Ubuntu:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap");
 
 /* CUSTOM PROPERTIES */
 :root {
@@ -16,10 +17,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", Verdana, sans-serif;
   scroll-behavior: smooth;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Poppins", Verdana, sans-serif;
+  max-width: 2400px;
+  margin: 0 auto;
 }
 
 ::-webkit-scrollbar {
@@ -78,6 +84,9 @@
   background: var(--primary-blue-color);
   z-index: 999;
   display: block;
+
+  max-width: 2400px;
+  margin: 0 auto;
 }
 
 .navbar__container {
@@ -283,6 +292,8 @@
   position: relative;
   background-color: var(--white-blue-bg-color);
   z-index: 10;
+
+  font-family: "Ubuntu", Verdana, sans-serif;
 }
 
 .only__mobile {
@@ -515,7 +526,7 @@
   padding: 0;
   content: "";
   position: absolute;
-  width: 150px;
+  width: 165px;
   height: 3px;
   bottom: 0;
   left: 50%;
@@ -528,7 +539,7 @@
   padding: 0;
   content: "";
   position: absolute;
-  width: 110px;
+  width: 120px;
   height: 3px;
   bottom: -7px;
   left: 50%;
@@ -677,7 +688,7 @@
   padding: 0;
   content: "";
   position: absolute;
-  width: 110px;
+  width: 115px;
   height: 3px;
   bottom: -7px;
   left: 50%;
@@ -805,6 +816,136 @@
   }
 }
 
+/* SERVICES SECTION */
+.services {
+  position: relative;
+  padding: 40px 0;
+}
+
+.services .content {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.services .content .heading {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: var(--dark-blue-color);
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.services .content .heading::before {
+  margin: 0;
+  padding: 0;
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-blue-color);
+}
+
+.services .content .heading::after {
+  margin: 0;
+  padding: 0;
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 3px;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-blue-color);
+}
+
+.services .content .service__container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 30px;
+}
+
+.services .content .service__container .items__link {
+  text-decoration: none;
+}
+
+.services .content .service__container .items__link .items {
+  height: 330px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px var(--shadow-color);
+  margin: 20px 0;
+  text-align: center;
+  padding: 30px 15px;
+  color: var(--dark-blue-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  transition: all 0.35s ease;
+}
+
+.services .content .service__container .items__link .items:hover {
+  background: var(--primary-blue-color);
+  color: #fff;
+
+  transition: all 0.35s ease;
+}
+
+.services .content .service__container .items__link .items .icon {
+  height: 50px;
+  width: 50px;
+  background: var(--primary-blue-color);
+  border-radius: 50%;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+.services .content .service__container .items__link .items:hover .icon {
+  background: #fff;
+  color: var(--primary-blue-color);
+
+  transition: all 0.35s ease;
+}
+
+.services .content .service__container .items__link .items .title {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.services .content .service__container .items__link .items .description {
+  font-size: 16px;
+}
+
+@media (max-width: 1168px) {
+  .services .content .service__container {
+    grid-template-columns: auto auto;
+  }
+
+  .services .content .service__container .items__link .items {
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 668px) {
+  .services .content .service__container {
+    grid-template-columns: auto;
+    place-items: center;
+  }
+}
+
 /* NON TOUCH DEVICE */
 @media (hover: none) {
   .navbar__container .menu .sections a:hover {
@@ -836,5 +977,15 @@
     transform: scale(0.9);
 
     transition: all 0.4s ease;
+  }
+
+  .services .content .service__container .items__link .items:hover {
+    background: #fff;
+    color: var(--dark-blue-color);
+  }
+
+  .services .content .service__container .items__link .items:hover .icon {
+    background: var(--primary-blue-color);
+    color: #fff;
   }
 }
